@@ -2,7 +2,13 @@
  * Reads a line from an input
  * @return {string} the read line
  */
-declare function readline(): string;
+declare let readline: ()=>string;
+
+declare module NodeJS {
+	interface Global {
+		readline: ()=>string;
+	}
+}
 
 /**
  * Prints given object to the output.
